@@ -9,6 +9,9 @@ app.use(express.static("static"))
 app.get("/",(req,res) => {
   res.render("index")
 })
+app.get("/login",(req,res) => {
+  res.render("login")
+})
 
 app.listen(port,() => {
   console.log(`app is listen in port ${port}`)
