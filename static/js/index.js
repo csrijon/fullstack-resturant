@@ -72,5 +72,27 @@ Lunch.addEventListener("click",async() => {
  await lunchmenu()
 })
     
+ async function dinnermenu() {
+    let res = await fetch("/dinner");
+    let dinnerdata = await res.json();
+    const menuitems = document.querySelector(".menu-items");
+    menuitems.innerHTML = "";
+    dinnerdata.forEach((dmenu) => {
+        const menu = document.createElement("div");
+        menu.classList.add("menu-item");
+        menu.innerHTML = `
+         <img src="${dmenu.img}" alt="Magnam Tiste">
+            <h4>${dmenu.name}</h4>
+            <span class="price">${dmenu.price}</span>
+            <button class="buy-btn">
+                <span class="material-symbols-outlined">shopping_cart</span> Buy
+            </button>
+        `
+        menuitems.appendChild(menu);
+    });
+}
 
-
+let Dinner = document.querySelector(".Dinner");
+Dinner.addEventListener("click",async() => {
+  await dinnermenu();
+})

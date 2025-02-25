@@ -81,3 +81,11 @@ app.get("/lunch",(req,res) => {
     }
   ])
 })
+app.get("/dinner", (req,res) => {
+  res.json([
+    {name:"chiken",price:"$8",img: "/images/dinner1.jpg"},
+    {name:"chiken tanduri",price:"$8",img: "/images/dinner2.jpg"},
+    {name:"chiken popkon",price:"$8",img: "/images/dinner3.jpg"},
+    {name:"chiken masala",price:"$8",img: "/images/dinner4.jpg"}
+  ])
+})
